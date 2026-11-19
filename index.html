@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bot MyInternship - Asisten Logbook & Presensi Magang</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0 1rem 3rem;
+    }
+    header {
+      background-color: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo-badge {
+      background: var(--primary);
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    h1 { font-size: 1.5rem; font-weight: 700; }
+    .subtitle { color: var(--muted); font-size: 0.95rem; }
+    nav { margin-top: 1rem; display: flex; gap: 1rem; }
+    nav a { color: var(--primary); text-decoration: none; font-weight: 500; font-size: 0.9rem; }
+    nav a:hover { text-decoration: underline; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    h2 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--primary-dark); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+    h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: var(--text); }
+    p, ul { margin-bottom: 1rem; font-size: 0.95rem; color: #334155; }
+    ul { padding-left: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+    .badge {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-content">
+      <div class="logo-badge">🤖</div>
+      <div>
+        <h1>Bot MyInternship Polibatam</h1>
+        <p class="subtitle">Asisten Otomasi Pengarsipan Logbook & Presensi Magang Mahasiswa</p>
+        <nav>
+          <a href="#about">Tentang Aplikasi</a>
+          <a href="#privacy">Kebijakan Privasi</a>
+          <a href="#terms">Ketentuan Layanan</a>
+          <a href="#contact">Kontak</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="card">
+      <h2>Tentang Aplikasi</h2>
+      <p>
+        <strong>Bot MyInternship</strong> adalah sistem asisten otomasi berbasis Telegram yang dirancang khusus untuk mempermudah mahasiswa magang dalam melakukan dokumentasi kegiatan mingguan, pengarsipan foto bukti magang ke Google Drive pribadi, dan pengisian laporan ke portal resmi magang kampus (MyInternship).
+      </p>
+      <h3>Fitur Utama:</h3>
+      <ul>
+        <li><strong>Penyusunan Draf Formal:</strong> Membantu mahasiswa menyusun catatan kasar kegiatan mingguan menjadi narasi formal berkaidah akademik.</li>
+        <li><strong>Integrasi Google Drive Pribadi:</strong> Mengunggah foto dokumentasi kegiatan mahasiswa langsung ke Google Drive milik mahasiswa itu sendiri menggunakan otorisasi resmi Google OAuth 2.0.</li>
+        <li><strong>Transparansi Penuh (Human-in-the-Loop):</strong> Seluruh draf laporan wajib ditinjau dan disetujui langsung oleh mahasiswa sebelum dikirimkan ke portal kampus.</li>
+      </ul>
+    </section>
+
+    <!-- PRIVACY POLICY SECTION -->
+    <section id="privacy" class="card">
+      <h2>Kebijakan Privasi (Privacy Policy)</h2>
+      <p><em>Terakhir diperbarui: 19 November 2026</em></p>
+      <p>
+        Privasi Anda sangat penting bagi kami. Kebijakan Privasi ini menjelaskan bagaimana aplikasi <strong>Bot MyInternship</strong> memproses, menggunakan, dan melindungi data Anda sesuai dengan ketentuan perundang-undangan Pelindungan Data Pribadi (UU PDP No. 27 Tahun 2022) dan <em>Google API Services User Data Policy</em>.
+      </p>
+
+      <h3>1. Data yang Kami Proses</h3>
+      <ul>
+        <li><strong>Identitas Telegram:</strong> ID pengguna Telegram digunakan semata-mata untuk otentikasi sesi interaksi bot.</li>
+        <li><strong>Catatan Kegiatan:</strong> Teks deskripsi yang Anda kirimkan untuk disusun menjadi draf laporan mingguan.</li>
+        <li><strong>Foto Dokumentasi:</strong> Foto bukti kehadiran atau kegiatan kerja yang Anda unggah untuk diarsipkan. Seluruh metadata lokasi (EXIF/GPS) dihapus secara otomatis sebelum disimpan demi privasi lingkungan kerja Anda.</li>
+        <li><strong>Kredensial Sesi Portal:</strong> Informasi login portal kampus dienkripsi dengan standar militer <code>AES-256-GCM</code> pada memori terisolasi dan hanya digunakan untuk sinkronisasi form logbook.</li>
+      </ul>
+
+      <h3>2. Penggunaan Google User Data & Scope Google Drive</h3>
+      <p>
+        Aplikasi ini meminta izin akses Google OAuth dengan cakupan hak akses terbatas (<em>least privilege</em>):
+        <br><span class="badge">https://www.googleapis.com/auth/drive.file</span>
+      </p>
+      <ul>
+        <li><strong>Batas Akses Terisolasi:</strong> Scope <code>drive.file</code> hanya memberikan izin bagi bot untuk membuat folder "Dokumentasi Magang" dan mengunggah foto kegiatan magang yang Anda kirimkan. Bot <strong>TIDAK BISA</strong> melihat, membaca, mengedit, atau menghapus file/dokumen pribadi lainnya yang berada di Google Drive Anda.</li>
+        <li><strong>Kepemilikan File 100% Milik Pengguna:</strong> Seluruh foto yang diunggah disimpan di Google Drive pribadi Anda (menggunakan kuota penyimpanan 15 GB milik Anda).</li>
+        <li><strong>Tidak Ada Data Drive yang Dijual atau Dibagikan:</strong> Data dari Google Drive tidak pernah dialihkan ke pihak ketiga, tidak digunakan untuk iklan, dan tidak digunakan untuk melatih model AI.</li>
+      </ul>
+
+      <h3>3. Hak Pengguna & Pencabutan Akses (Revocation)</h3>
+      <p>
+        Anda memiliki kendali penuh atas data Anda setiap saat:
+      </p>
+      <ul>
+        <li>Ketik perintah <code>/putus_drive</code> di chat bot untuk mencabut akses Google Drive seketika dan menghapus seluruh token tersimpan dari sistem kami.</li>
+        <li>Anda juga dapat mencabut akses kapan saja melalui pengaturan resmi akun Google Anda di <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account Permissions</a>.</li>
+        <li>Ketik perintah <code>/hapus_data</code> jika ingin menghapus seluruh akun dan data riwayat presensi dari bot.</li>
+      </ul>
+    </section>
+
+    <!-- TERMS OF SERVICE SECTION -->
+    <section id="terms" class="card">
+      <h2>Ketentuan Layanan (Terms of Service)</h2>
+      <p>
+        Dengan menggunakan <strong>Bot MyInternship</strong>, Anda menyetujui ketentuan berikut:
+      </p>
+      <ul>
+        <li>Aplikasi ini disediakan sebagai alat bantu produktivitas mahasiswa magang. Mahasiswa bertanggung jawab penuh atas kebenaran faktual kegiatan magang yang dilaporkan ke kampus.</li>
+        <li>Pengguna dilarang mengunggah materi yang melanggar hukum, dokumen rahasia perusahaan (NDA), atau konten yang melanggar hak cipta pihak ketiga.</li>
+        <li>Layanan ini disediakan secara independen untuk mendukung efisiensi mahasiswa dan mematuhi aturan portal akademik Polibatam.</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="card">
+      <h2>Kontak Pengembang & Bantuan</h2>
+      <p>
+        Jika Anda memiliki pertanyaan mengenai penggunaan bot, kendala teknis, atau permintaan terkait privasi data Anda, silakan hubungi pengembang:
+      </p>
+      <ul>
+        <li><strong>Pengembang:</strong> Naufal Fadhilah Ardhani</li>
+        <li><strong>Institusi:</strong> Politeknik Negeri Batam</li>
+        <li><strong>Email Dukungan:</strong> <a href="mailto:naufal201080@gmail.com">naufal201080@gmail.com</a></li>
+        <li><strong>Bantuan Telegram / WhatsApp:</strong> Melalui perintah <code>/help</code> langsung di bot Telegram.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Bot MyInternship Polibatam. Hak Cipta Dilindungi.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
