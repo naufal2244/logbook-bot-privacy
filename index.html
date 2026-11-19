@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bot MyInternship - Asisten Logbook & Presensi Magang</title>
+  <title>Logbook Magang Assistant - Layanan Pengarsipan Presensi & Logbook</title>
   <style>
     :root {
       --primary: #2563eb;
@@ -51,9 +51,9 @@
       align-items: center;
       justify-content: center;
     }
-    h1 { font-size: 1.5rem; font-weight: 700; }
+    h1 { font-size: 1.4rem; font-weight: 700; }
     .subtitle { color: var(--muted); font-size: 0.95rem; }
-    nav { margin-top: 1rem; display: flex; gap: 1rem; }
+    nav { margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap; }
     nav a { color: var(--primary); text-decoration: none; font-weight: 500; font-size: 0.9rem; }
     nav a:hover { text-decoration: underline; }
     .card {
@@ -64,7 +64,7 @@
       margin-bottom: 2rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.02);
     }
-    h2 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--primary-dark); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+    h2 { font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-dark); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
     h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: var(--text); }
     p, ul { margin-bottom: 1rem; font-size: 0.95rem; color: #334155; }
     ul { padding-left: 1.5rem; }
@@ -77,6 +77,7 @@
       border-radius: 6px;
       font-size: 0.8rem;
       font-weight: 600;
+      word-break: break-all;
     }
     footer {
       text-align: center;
@@ -90,15 +91,15 @@
 
   <header>
     <div class="container header-content">
-      <div class="logo-badge">🤖</div>
+      <div class="logo-badge">📘</div>
       <div>
-        <h1>Bot MyInternship Polibatam</h1>
+        <h1>Logbook Magang Assistant</h1>
         <p class="subtitle">Asisten Otomasi Pengarsipan Logbook & Presensi Magang Mahasiswa</p>
         <nav>
           <a href="#about">Tentang Aplikasi</a>
           <a href="#privacy">Kebijakan Privasi</a>
           <a href="#terms">Ketentuan Layanan</a>
-          <a href="#contact">Kontak</a>
+          <a href="#contact">Kontak Pengembang</a>
         </nav>
       </div>
     </div>
@@ -110,13 +111,13 @@
     <section id="about" class="card">
       <h2>Tentang Aplikasi</h2>
       <p>
-        <strong>Bot MyInternship</strong> adalah sistem asisten otomasi berbasis Telegram yang dirancang khusus untuk mempermudah mahasiswa magang dalam melakukan dokumentasi kegiatan mingguan, pengarsipan foto bukti magang ke Google Drive pribadi, dan pengisian laporan ke portal resmi magang kampus (MyInternship).
+        <strong>Logbook Magang Assistant</strong> adalah perangkat lunak produktivitas independen berbasis Telegram yang dirancang untuk mempermudah mahasiswa magang dalam melakukan dokumentasi kegiatan mingguan, pengarsipan foto bukti magang ke Google Drive pribadi, dan pengisian laporan ke portal magang mahasiswa secara efisien dan terstruktur.
       </p>
       <h3>Fitur Utama:</h3>
       <ul>
-        <li><strong>Penyusunan Draf Formal:</strong> Membantu mahasiswa menyusun catatan kasar kegiatan mingguan menjadi narasi formal berkaidah akademik.</li>
-        <li><strong>Integrasi Google Drive Pribadi:</strong> Mengunggah foto dokumentasi kegiatan mahasiswa langsung ke Google Drive milik mahasiswa itu sendiri menggunakan otorisasi resmi Google OAuth 2.0.</li>
-        <li><strong>Transparansi Penuh (Human-in-the-Loop):</strong> Seluruh draf laporan wajib ditinjau dan disetujui langsung oleh mahasiswa sebelum dikirimkan ke portal kampus.</li>
+        <li><strong>Penyusunan Draf Formal:</strong> Membantu mahasiswa menstrukturkan catatan kasar kegiatan mingguan menjadi narasi formal berkaidah laporan kerja profesional.</li>
+        <li><strong>Integrasi Google Drive Mandiri:</strong> Mengunggah foto dokumentasi kegiatan kerja langsung ke Google Drive milik mahasiswa itu sendiri menggunakan otorisasi resmi Google OAuth 2.0.</li>
+        <li><strong>Transparansi Penuh (Human-in-the-Loop):</strong> Seluruh draf laporan wajib ditinjau dan disetujui secara sadar oleh mahasiswa sebelum dikirimkan ke formulir portal magang.</li>
       </ul>
     </section>
 
@@ -125,15 +126,15 @@
       <h2>Kebijakan Privasi (Privacy Policy)</h2>
       <p><em>Terakhir diperbarui: 19 November 2026</em></p>
       <p>
-        Privasi Anda sangat penting bagi kami. Kebijakan Privasi ini menjelaskan bagaimana aplikasi <strong>Bot MyInternship</strong> memproses, menggunakan, dan melindungi data Anda sesuai dengan ketentuan perundang-undangan Pelindungan Data Pribadi (UU PDP No. 27 Tahun 2022) dan <em>Google API Services User Data Policy</em>.
+        Privasi pengguna adalah prioritas mutlak kami. Kebijakan Privasi ini menjelaskan bagaimana aplikasi <strong>Logbook Magang Assistant</strong> memproses, menggunakan, dan melindungi data Anda sesuai dengan ketentuan perundang-undangan Pelindungan Data Pribadi (UU PDP No. 27 Tahun 2022) dan <em>Google API Services User Data Policy</em>.
       </p>
 
       <h3>1. Data yang Kami Proses</h3>
       <ul>
-        <li><strong>Identitas Telegram:</strong> ID pengguna Telegram digunakan semata-mata untuk otentikasi sesi interaksi bot.</li>
-        <li><strong>Catatan Kegiatan:</strong> Teks deskripsi yang Anda kirimkan untuk disusun menjadi draf laporan mingguan.</li>
-        <li><strong>Foto Dokumentasi:</strong> Foto bukti kehadiran atau kegiatan kerja yang Anda unggah untuk diarsipkan. Seluruh metadata lokasi (EXIF/GPS) dihapus secara otomatis sebelum disimpan demi privasi lingkungan kerja Anda.</li>
-        <li><strong>Kredensial Sesi Portal:</strong> Informasi login portal kampus dienkripsi dengan standar militer <code>AES-256-GCM</code> pada memori terisolasi dan hanya digunakan untuk sinkronisasi form logbook.</li>
+        <li><strong>Identitas Telegram:</strong> ID pengguna Telegram digunakan semata-mata untuk otentikasi sesi interaksi bot privat.</li>
+        <li><strong>Catatan Kegiatan:</strong> Teks deskripsi aktivitas magang yang Anda kirimkan untuk disusun menjadi draf laporan mingguan.</li>
+        <li><strong>Foto Dokumentasi:</strong> Foto bukti pelaksanaan kegiatan kerja yang Anda kirimkan untuk diarsipkan. Seluruh metadata lokasi (EXIF/GPS) dibersihkan secara otomatis sebelum disimpan demi melindungi privasi area kerja Anda.</li>
+        <li><strong>Kredensial Sesi Portal:</strong> Informasi login portal magang dienkripsi dengan standar <code>AES-256-GCM</code> pada memori terisolasi dan hanya digunakan untuk pengisian formulir logbook resmi.</li>
       </ul>
 
       <h3>2. Penggunaan Google User Data & Scope Google Drive</h3>
@@ -142,19 +143,19 @@
         <br><span class="badge">https://www.googleapis.com/auth/drive.file</span>
       </p>
       <ul>
-        <li><strong>Batas Akses Terisolasi:</strong> Scope <code>drive.file</code> hanya memberikan izin bagi bot untuk membuat folder "Dokumentasi Magang" dan mengunggah foto kegiatan magang yang Anda kirimkan. Bot <strong>TIDAK BISA</strong> melihat, membaca, mengedit, atau menghapus file/dokumen pribadi lainnya yang berada di Google Drive Anda.</li>
-        <li><strong>Kepemilikan File 100% Milik Pengguna:</strong> Seluruh foto yang diunggah disimpan di Google Drive pribadi Anda (menggunakan kuota penyimpanan 15 GB milik Anda).</li>
-        <li><strong>Tidak Ada Data Drive yang Dijual atau Dibagikan:</strong> Data dari Google Drive tidak pernah dialihkan ke pihak ketiga, tidak digunakan untuk iklan, dan tidak digunakan untuk melatih model AI.</li>
+        <li><strong>Batas Akses Terisolasi:</strong> Scope <code>drive.file</code> hanya memberikan hak akses bagi asisten untuk membuat folder khusus dokumentasi dan mengunggah foto magang yang Anda kirimkan. Aplikasi <strong>TIDAK MEMILIKI HAK</strong> untuk melihat, membaca, mengedit, atau menghapus file pribadi lainnya yang berada di Google Drive Anda.</li>
+        <li><strong>Kepemilikan File 100% Milik Pengguna:</strong> Seluruh foto yang diunggah tersimpan aman di Google Drive pribadi Anda (menggunakan kuota penyimpanan 15 GB milik akun Anda).</li>
+        <li><strong>Tidak Ada Data yang Dijual atau Dibagikan:</strong> Data dari Google Drive tidak pernah dialihkan ke pihak ketiga, tidak digunakan untuk kebutuhan periklanan, dan tidak digunakan untuk melatih model kecerdasan buatan.</li>
       </ul>
 
       <h3>3. Hak Pengguna & Pencabutan Akses (Revocation)</h3>
       <p>
-        Anda memiliki kendali penuh atas data Anda setiap saat:
+        Anda memiliki kendali penuh atas data dan izin akses Anda setiap saat:
       </p>
       <ul>
-        <li>Ketik perintah <code>/putus_drive</code> di chat bot untuk mencabut akses Google Drive seketika dan menghapus seluruh token tersimpan dari sistem kami.</li>
-        <li>Anda juga dapat mencabut akses kapan saja melalui pengaturan resmi akun Google Anda di <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account Permissions</a>.</li>
-        <li>Ketik perintah <code>/hapus_data</code> jika ingin menghapus seluruh akun dan data riwayat presensi dari bot.</li>
+        <li>Ketik perintah <code>/putus_drive</code> di chat bot untuk mencabut otorisasi Google Drive seketika dan menghapus seluruh token tersimpan dari sistem kami secara permanen.</li>
+        <li>Anda juga dapat mencabut akses kapan saja melalui dashboard resmi akun Google Anda di <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account Permissions</a>.</li>
+        <li>Ketik perintah <code>/hapus_data</code> jika ingin menghapus seluruh akun dan data riwayat dari bot.</li>
       </ul>
     </section>
 
@@ -162,24 +163,23 @@
     <section id="terms" class="card">
       <h2>Ketentuan Layanan (Terms of Service)</h2>
       <p>
-        Dengan menggunakan <strong>Bot MyInternship</strong>, Anda menyetujui ketentuan berikut:
+        Dengan menggunakan <strong>Logbook Magang Assistant</strong>, Anda menyetujui ketentuan berikut:
       </p>
       <ul>
-        <li>Aplikasi ini disediakan sebagai alat bantu produktivitas mahasiswa magang. Mahasiswa bertanggung jawab penuh atas kebenaran faktual kegiatan magang yang dilaporkan ke kampus.</li>
+        <li>Aplikasi ini disediakan secara independen sebagai alat bantu produktivitas mahasiswa magang. Mahasiswa bertanggung jawab penuh atas kebenaran faktual kegiatan yang dilaporkan.</li>
         <li>Pengguna dilarang mengunggah materi yang melanggar hukum, dokumen rahasia perusahaan (NDA), atau konten yang melanggar hak cipta pihak ketiga.</li>
-        <li>Layanan ini disediakan secara independen untuk mendukung efisiensi mahasiswa dan mematuhi aturan portal akademik Polibatam.</li>
+        <li>Layanan ini beroperasi secara transparan dan mewajibkan konfirmasi pengguna pada setiap pengiriman formulir.</li>
       </ul>
     </section>
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="card">
-      <h2>Kontak Pengembang & Bantuan</h2>
+      <h2>Kontak Pengembang & Dukungan</h2>
       <p>
-        Jika Anda memiliki pertanyaan mengenai penggunaan bot, kendala teknis, atau permintaan terkait privasi data Anda, silakan hubungi pengembang:
+        Jika Anda memiliki pertanyaan mengenai penggunaan aplikasi, kendala teknis, atau permintaan terkait privasi data Anda, silakan hubungi pengembang independen:
       </p>
       <ul>
         <li><strong>Pengembang:</strong> Naufal Fadhilah Ardhani</li>
-        <li><strong>Institusi:</strong> Politeknik Negeri Batam</li>
         <li><strong>Email Dukungan:</strong> <a href="mailto:naufal201080@gmail.com">naufal201080@gmail.com</a></li>
         <li><strong>Bantuan Telegram / WhatsApp:</strong> Melalui perintah <code>/help</code> langsung di bot Telegram.</li>
       </ul>
@@ -189,7 +189,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 Bot MyInternship Polibatam. Hak Cipta Dilindungi.</p>
+      <p>&copy; 2026 Logbook Magang Assistant. Hak Cipta Dilindungi.</p>
     </div>
   </footer>
 
